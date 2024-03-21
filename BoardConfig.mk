@@ -26,3 +26,9 @@ TARGET_KERNEL_CONFIG := lineage-a7y17lte_defconfig
 
 # OTA
 TARGET_OTA_ASSERT_DEVICE := a7y17lte,a7y17ltexx
+
+# Prebuilt Kernel
+TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilts/kernel
+BOARD_KERNEL_BASE := 0x10000000
+BOARD_KERNEL_PAGESIZE := 2048
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt $(LOCAL_PATH)/prebuilts/dtb
